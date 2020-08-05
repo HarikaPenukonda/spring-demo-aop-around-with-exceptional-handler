@@ -45,10 +45,9 @@ public class MyDemoLoggingAspect {
 			// log the exception
 			myLogger.warning(e.getMessage());
 			
-			// give user a custom message
-			result = "Major accident! No worries";
+			// rethrow exception
+			throw e;
 		}
-		
 		// end timestamp
 		long end = System.currentTimeMillis();
 		
